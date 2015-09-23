@@ -1,9 +1,6 @@
 /*
 This is empty on purpose! Your code to build the resume will go here.
-
-
  $("#main").append([javier]);
-
  var firstName = "Javier Farinos";
  var age = 32;
  console.log(firstName);
@@ -12,163 +9,169 @@ This is empty on purpose! Your code to build the resume will go here.
  var funThoughs = awesomeThoughts.replace("AWESOME","FUN");
  $("#main").append(funThoughs);
  console.log(awesomeThoughts);
-
 */
 
-//$("#main").append(skills.length);
-var bio = {"name":"Javier Farinos",
-  "role": "Web Developer",
-  "contact": {
-    "mobile": "07562896312",
-    "email": "jafamo@gmail.com",
-    "github": "jafamo",
-    "twitter":"@java407",
-    "location":"Chelmsford"
-  },
-  "picture": "images/fry.jpg",
-  "welcome": "Hello !",
-  "skills" : ["java","javascript","HTML","CSS","MySQL","linux","Git"]
+var bio = {
+          "name" : "Javier Farinos",
+          "role" : "WebDeveloper",
+          "welcomeMessage" : "Hello !!.", 
+          "image" : "images/perfil.png",
+          "contacts" : 
+              [{
+                "mobile" : "555-55-55",
+                "skype" : "jafamo2", 
+                "location" : "Chelmsford",
+                "email" : "jafamo@gmail.com"
+              }], 
+  "skills" : ["Java","PHP","JavaScript","MySQL", "Git", "HTML"]
 
 };
-
-//NAME and ROLE
-var formattedRule = HTMLheaderRole.replace("%data%",bio.role);
-$("#header").prepend(formattedRule);
-var formattedName = HTMLheaderName.replace("%data%",bio.name);
-$("#header").prepend(formattedName);
-
-
-//CONTACT
-
-var formattedContactMobile = HTMLmobile.replace("%data%",bio.contact.mobile);
-  $('#topContacts').append(formattedContactMobile);
-  //EMAIL
-  var formattedBioEmail = HTMLemail.replace("%data%",bio.contact.email);
-  $('#topContacts').append(formattedBioEmail);
-  //GITHUB
-  var formattedBioGithub = HTMLgithub.replace("%data%",bio.contact.github);
-  $('#topContacts').append(formattedBioGithub);
-  //TWITTER
-  var formattedBioTwitter = HTMLtwitter.replace("%data%",bio.contact.twitter);
-  $('#topContacts').append(formattedBioTwitter);
-  //LOCATION
-  var formattedLocation = HTMLlocation.replace("%data%",bio.contact.location);
-  $('#topContacts').append(formattedLocation);
-
-//PICTURE
-  var formattedBioPic = HTMLbioPic.replace("%data%",bio.picture);
-  $("#header").append(formattedBioPic);
-
-//MESSAGE
-  var formattedMessage = HTMLwelcomeMsg.replace("%data%",bio.welcome);
-  $("#header").append(formattedMessage);
-
-//SKILL MESSAGE
-  $("#header").append(HTMLskillsStart.replace("%data%",bio.welcome));
-
-//SKILLS
-  var formattedSkills = HTMLskills.replace('%data%',bio.skills);
-  $("#header").append(formattedSkills);
 
 //-WORK--------------------------------------------------------------
-
 var work = {
-  "currentJob": "HelpDesk",
-  "employer": "Tisssat",
-  "dateWork":"2015",
-  "city":"Valencia",
-  "description": "HelpDesk with differents Systems (Linux, Windows).Programming sripts in shell and Batch for windows."
-};
+  "jobs" : [
+      {
+        
+        "employer": "Tisssat",
+        "title" : "HelpDesk",
+        "dates" : 2015,
+        "location":"Valencia",
+        "description": "HelpDesk with differents Systems (Linux, Windows).Programming sripts in shell and Batch for windows."
+      },
+      {
+        "title" : "SysAdmin",
+        "employer": "Dimension Informatica",
+        "dates" : 2006,
+        "location":"Valencia ",
+        "description": "Install servers (Apache,VSFT,TOMCAT) Backups and shell scripts."
+      }]
+    };
 
-var workStart = HTMLworkStart.replace("%data%","Working");
-$('#workExperience').append(workStart);
-
-var workEmployer = HTMLworkEmployer.replace("%data%",work.employer);
-$('#workExperience').append(workEmployer);
-
-var workTitle = HTMLworkTitle.replace("%data%",work.currentJob);
-$('#workExperience').append(workTitle);
-
-var workTitle = HTMLworkDates.replace("%data%",work.dateWork);
-$('#workExperience').append(workTitle);
-
-var workLocation = HTMLworkLocation.replace("%data%",work.city);
-$('#workExperience').append(workLocation);
-
-var workDescription = HTMLworkDescription.replace("%data%",work.description);
-$('#workExperience').append(workDescription);
-
-
-
-
-var work1 = {
-  "currentJob": "SysAdmin",
-  "employer": "Dimension Informatica",
-  "dateWork":"2006",
-  "city":"Valencia",
-  "description": "Install and configure laptops and workstation, Install servers (Apache,VSFT,TOMCAT)"
-};
-
-var workEmployer = HTMLworkEmployer.replace("%data%",work1.employer);
-$('#workExperience').append(workEmployer);
-
-var workTitle = HTMLworkTitle.replace("%data%",work1.currentJob);
-$('#workExperience').append(workTitle);
-
-var workTitle = HTMLworkDates.replace("%data%",work1.dateWork);
-$('#workExperience').append(workTitle);
-
-var workLocation = HTMLworkLocation.replace("%data%",work1.city);
-$('#workExperience').append(workLocation);
-
-var workDescription = HTMLworkDescription.replace("%data%",work1.description);
-$('#workExperience').append(workDescription);
 
 
 /*------------EDUCATION-----------------*/
-
-
-var Education = [
-  {
-      "schoolName" : "Universidad Politecnica de Valencia",
-      "schoolDegree" : "Bachelor of IT Engienering (B.A.Sc.)",
-      "schoolDates" : "2006 - 2015",
-      "schoolLocation" : "Valencia - Valencia  (Spain)",
-      "schoolMajor" : "http://www.upv.es/en/"
-    },
+var education = {
+  "schools" : [
+      {
+        "name" : "Universidad Politecnica de Valencia",
+        "degree" : "Bachelor of IT Engienering (B.A.Sc.)",
+        "dates" : "2006 - 2015",
+        "majors" : "computer science",
+        "location" : "Valencia",
+        "url" : "http://www.upv.es/en/"
+      },
+      {
+        "name" : "Politecnico di Milano",
+        "degree" : "Bachelor of Applied Science (B.A.Sc.) ERASMUS student",
+        "dates" : "2012 - 2013",
+        "majors" : "computer science",
+        "location" : "Milan",
+        "url" : "http://www.polo-como.polimi.it/en/"
+      },
     {
-      "schoolName" : "Politecnico di Milano",
-      "schoolDegree" : "Bachelor of Applied Science (B.A.Sc.) ERASMUS student",
-      "schoolDates" : "2012 - 2013",
-      "schoolLocation" : "Como - Milano (Italy)",
-      "schoolMajor" : "http://www.polo-como.polimi.it/en/"
-    },
-    {
-      "schoolName" : "Florida University",
-      "schoolDegree" : "FP2, Computer Systems Networking and Telecommunications",
-      "schoolDates" : "2004 - 2006",
-      "schoolLocation" : "Catarroja - Valencia (Spain)",
-      "schoolMajor" : "http://www.florida-uni.es/web_en/home.php"
-    }
-  ]
+      "name" : "Florida University",
+      "degree" : "FP2, Computer Systems Networking and Telecommunications",
+      "dates" : "2004 - 2006",
+      "majors" : "computer science",
+      "location" : "Catarroja (Spain)",
+      "url" : "http://www.florida-uni.es/web_en/home.php"
+    }],
 
-  var schoolStart = HTMLschoolStart.replace("%data%","Education");
-  $('#education').append(schoolStart);
 
-  for(var i =0; i < Education.length; i++){
+    "online courses" : [{
+          "title" : "Front-End Web Developer Nanodegree",
+          "school" : "udacity",
+          "dates" : "2014 - 2015",
+          "url" : "https://www.udacity.com/course/nd001"
+  }]
+  };
 
-    var schoolName = HTMLschoolName.replace("%data%",Education[i].schoolName);
-    $('#education').append(schoolName);
 
-    var schoolDegree = HTMLschoolDegree.replace("%data%",Education[i].schoolDegree);
-    $('#education').append(schoolDegree);
+ 
 
-    var schoolDates = HTMLschoolDates.replace("%data%",Education[i].schoolDates);
-    $('#education').append(schoolDates);
 
-    var schoolLocation = HTMLschoolLocation.replace("%data%",Education[i].schoolLocation);
-    $('#education').append(schoolLocation);
 
-    var schoolMajor = HTMLschoolMajor.replace("%data%",Education[i].schoolMajor);
-    $('#education').append(schoolMajor);
+bio.display = function() {
+  var formattedName = HTMLheaderName.replace("%data%",bio.name);
+  var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
+  var formattedImage = HTMLbioPic.replace("%data%",bio.image);
+  var formattedMessage = HTMLWelcomeMsg.replace("%data%",bio.welcomeMessage);
+
+  $("#header").prepend(formattedRole).prepend(formattedName).append(formattedImage,formattedMessage);
+  $("#header").append(HTMLskillsStart);
+
+  for(skill in bio.skills) {
+    var formattedSkills = HTMLskills.replace("%data%",bio.skills[skill]);
+    $("#skills").append(formattedSkills);
+  };
+
+  for(contact in bio.contacts) {
+    var formattedMobile = HTMLmobile.replace("%data%",bio.contacts[contact].mobile);
+    var formattedEmail = HTMLemail.replace("%data%",bio.contacts[contact].email);
+    var formattedSkype = HTMLcontactGeneric.replace("%contact%","skype").replace("%data%",bio.contacts[contact].skype);
+    $("#footerContacts").append(formattedMobile,formattedEmail,formattedSkype);
+  };
+};
+
+education.display = function() {
+  for(school in education.schools) {
+    $("#education").append(HTMLschoolStart);
+    
+    var formattedName = HTMLschoolName.replace("%data%",education.schools[school].name);
+    var formattedDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
+    var formattedDates = HTMLschoolDates.replace("%data%",education.schools[school].dates);
+    var formattedLocation = HTMLschoolLocation.replace("%data%",education.schools[school].location);
+    var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[school].majors);
+    $(".education-entry:last").append(formattedName + formattedDegree,formattedDates,formattedLocation,formattedMajor);
   }
+};
+
+work.display = function() {
+  for(job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart);
+    
+    var formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
+    var formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title);
+    var formattedDates = HTMLworkDates.replace("%data%",work.jobs[job].dates);
+    var formattedDescription = HTMLworkDescription.replace("%data%",work.jobs[job].description);
+
+    $(".work-entry:last").append(formattedEmployer + formattedTitle,formattedDates,formattedDescription);
+  }
+};
+
+/*projects.display = function(){
+  for(item in projects.project){
+    $("#projects").append(HTMLprojectStart);
+    var formattedTitle = HTMLprojectTitle.replace("%data%",projects.project[item].title);
+    var formattedDates = HTMLprojectDates.replace("%data%",projects.project[item].dates);
+    var formattedDescription = HTMLprojectDescription.replace("%data%",projects.project[item].description);
+    
+    $(".project-entry:last").append(formattedTitle,formattedDates,formattedDescription);
+    for (image in projects.project[item].images) {
+      var formattedImage = HTMLprojectImage.replace("%data%",projects.project[item].images[image]);
+      $(".project-entry:last").append(formattedImage);
+    };
+    
+
+    
+  }
+};*/
+
+
+function inName(name){
+  console.log(name);
+  var newName = name;
+  newName = newName[0].toUpperCase() + newName.slice(1,newName.indexOf(" ") + 1).toLowerCase() + newName.slice(newName.indexOf(" ") + 1).toUpperCase(); 
+
+  return newName;
+};
+
+
+work.display();
+//projects.display();
+education.display();
+bio.display();
+
+$("#main").append(internationalizeButton);
+$("#mapDiv").append(googleMap);
+
